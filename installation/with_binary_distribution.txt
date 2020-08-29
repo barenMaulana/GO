@@ -1,0 +1,26 @@
+# my operating system : ubuntu.
+
+# INSTALL binary distribusi resmi dari webiste GO https://golang.org/
+
+# EXTRACT file binary dengan menggunakan terminal
+    sudo tar -xvf aplication_name
+
+# Move / pindahkan file hasil extract tadi menuju folder /usr/local
+    sudo mv go /usr/local
+
+# SET ENVIRONTMENTS / menambahkannya kedalam variable global
+    sudo nano ~/.bashrc
+
+# ADD this code at the end of the code / tambahkan code ini pada bagian akhir
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# Run this on terminal to load the config wich we just changed
+    source ~/.bashrc
+
+# CHECK on terminal
+    go version
+
+- if the info about the version appears, then you have successfully installed it.
+
