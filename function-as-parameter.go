@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"strconv"
+)
 
 type TypeFunc func(string,[]string)string
 
@@ -23,9 +27,25 @@ func filterStr(name string, students []string) string {
 	return result
 }
 
+func gmailGenerate(name string,callback func(string)bool) string {
+	var result string
+	if mutated := callback(name); mutated{
+		result = name + strings.Repeat(strconv.Itoa(int(name[0])), 1) + "@gmail.com"
+	}
+	return result
+}
+
 func main(){
 	students := []string{"baren","didi","mbek"}
 	search := "baren"
 	fullname := getFullName(search,students,filterStr)
 	fmt.Println(fullname)
+
+	realName := "rian"
+	repeatName := gmailGenerate(realName, func(name string) bool {
+		return name == realName
+	})
+	
+
+	fmt.Println(repeatName)
 }
