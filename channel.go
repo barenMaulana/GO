@@ -17,7 +17,6 @@ func main(){
 		}
 	}
 	
-
 	students1 := []string{"baren","didi","rian"}
 	students2 := []string{"ajril","pebi","rangga"}
 	students3 := []string{"manto","pikri","kupa"}
