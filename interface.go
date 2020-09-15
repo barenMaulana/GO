@@ -2,35 +2,25 @@ package main
 
 import "fmt"
 
-type sekolah interface{
-	getName() 
-	getGrade()
+type StudentInterface interface{
+	GetName() string
 }
 
-type siswaStruct struct{
-	name string
-	grade int
+func sayHello(student StudentInterface){
+	fmt.Println("hai", student.GetName())
 }
 
-
-func ( s siswaStruct ) getName(){
-	fmt.Println("name : " + s.name)
-} 
-
-func ( s siswaStruct ) getGrade(){
-	fmt.Println("grade : ",s.grade)
+type Students struct{
+	Name string
 }
 
-func data(sk sekolah){
-	sk.getName()
-	sk.getGrade()
+func (student Students) GetName() string {
+	return student.Name
 }
 
 func main(){
-	var siswa siswaStruct 
-	siswa.name = "baren maulana"
-	siswa.grade = 12
-	data(siswa)
+	var student Students
+	student.Name = "baren"
+
+	sayHello(student)
 }
-
-
