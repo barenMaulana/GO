@@ -5,12 +5,12 @@ import (
 	"reflect"
 )
 
-func checkTipeData(data interface{}){
+func checkTipeData(data interface{}) {
 	check := reflect.TypeOf(data)
 	fmt.Println(check)
 }
 
-func main(){
+func main() {
 	nama := "baren maulana"
 	umur := 17
 	reflectValue := reflect.ValueOf(umur)
@@ -20,5 +20,4 @@ func main(){
 
 	checkTipeData(umur)
 	checkTipeData(nama)
-	tipe data pada variable umur : int
 }
