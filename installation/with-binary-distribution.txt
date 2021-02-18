@@ -12,9 +12,7 @@
     sudo nano ~/.bashrc
 
 # ADD this code at the end of the code / tambahkan code ini pada bagian akhir
-    export GOROOT=/usr/local/go
-    export GOPATH=$HOME/go
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    export PATH=$PATH:/usr/local/go/bin
 
 # Run this on terminal to load the config wich we just changed
     source ~/.bashrc
@@ -23,4 +21,12 @@
     go version
 
 - if the info about the version appears, then you have successfully installed it.
+
+====================================================================================================================================================================
+
+note : 
+because in version 11 and above golang already uses go modules, so we don't need to set GOPATH anymore
+
+catatan :
+karena pada versi 11 ke atas golang sudah menggunakan go modules,  jadi kita tidak perlu mengatur GOPATH lagi
 
